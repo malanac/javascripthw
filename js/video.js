@@ -2,6 +2,8 @@ var video;
 
 window.addEventListener("load", function() {
 	video = document.querySelector("#myVideo");
+	console.log("Starting");
+	console.log(video.volume);
 });
 
 document.querySelector("#play").addEventListener("click", function() {
@@ -38,12 +40,14 @@ document.querySelector("#skip").addEventListener("click", function() {
 });
 
 document.querySelector("#mute").addEventListener("click", function() {
-	if (video.muted){
-		this.innerHTML = "muted"; 
+	if (video.muted == true){
 		video.muted = false; 
-	} else {
-		this.innerHTML = "unmuted"; 
+		this.innerHTML = "Mute"; 
+	} 
+	else {
+		this.innerHTML = "Unmute"; 
 		video.muted = true; 
+		console.log(video.muted)
 	}
 }); 
 
@@ -55,10 +59,10 @@ document.querySelector("#volumeSlider").addEventListener("change"), function() {
 	console.log(video.volume)
 }
 // greyscale
-document.querySelector("old").addEventListener("click", function() {
+document.querySelector("#old").addEventListener("click", function() {
 	video.classList.add("oldTime")
 }); 
 
-document.querySelector("original").addEventListener("click", function() {
+document.querySelector("#original").addEventListener("click", function() {
 	video.classList.remove("oldTime")
 }); 
