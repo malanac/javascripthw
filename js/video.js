@@ -51,13 +51,13 @@ document.querySelector("#mute").addEventListener("click", function() {
 	}
 }); 
 
-document.querySelector("#volumeSlider").addEventListener("change"), function() {
+document.querySelector("#volumeSlider").addEventListener("change", function() {
 	console.log(this);
 	console.log(this.value);
 	document.querySelector('#volume').innerHTML = this.value + '%';
 	video.volume = this.value / 100;
 	console.log(video.volume)
-}
+}); 
 // greyscale
 document.querySelector("#old").addEventListener("click", function() {
 	video.classList.add("oldTime")
